@@ -1,0 +1,226 @@
+/* --- 基本設定 --- */
+:root {
+    --primary-color: #005A9C; /* メインカラー (企業のロゴカラーなどに) */
+    --secondary-color: #E6F4FF; /* アクセント背景色 */
+    --text-color: #333333; /* 基本テキスト色 */
+    --header-color: #222222; /* 見出しの色 */
+    --border-color: #DDDDDD; /* 境界線の色 */
+    --white-color: #FFFFFF;
+    --alert-bg-color: #FFFBEB; /* 注意喚起の背景色 */
+    --alert-border-color: #F8D086; /* 注意喚起の枠線色 */
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: #F8F9FA;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: var(--white-color);
+    padding: 30px 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* --- ヘッダー --- */
+header {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+header h1 i {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.date {
+    color: #666;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* --- メインコンテンツ --- */
+main .lead {
+    font-size: 1.1em;
+    font-weight: 500;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 22px;
+    color: var(--header-color);
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+h2 i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+h3 {
+    font-size: 18px;
+    color: var(--header-color);
+    font-weight: 700;
+    margin-top: 0;
+}
+
+/* メリット一覧 */
+.merit-list {
+    list-style: none;
+    padding: 0;
+}
+.merit-list li {
+    background: #f9f9f9;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.merit-list li h3 i {
+    margin-right: 8px;
+    color: var(--primary-color);
+}
+
+/* お願いセクション */
+.request-item {
+    border-top: 1px solid var(--border-color);
+    padding: 20px 0;
+}
+.request-item:first-child {
+    border-top: none;
+}
+
+/* ログイン情報 */
+dl {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+}
+dt, dd {
+    padding: 15px;
+}
+dt {
+    background-color: #f9f9f9;
+    font-weight: 700;
+}
+dd {
+    margin: 0;
+    border-top: 1px solid var(--border-color);
+}
+dt:first-of-type + dd {
+    border-top: none;
+}
+
+.alert {
+    background-color: var(--alert-bg-color);
+    border: 1px solid var(--alert-border-color);
+    border-left: 5px solid var(--alert-border-color);
+    padding: 15px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.alert p {
+    margin: 0;
+    font-weight: 500;
+}
+.alert i {
+    margin-right: 8px;
+}
+
+/* 移行スケジュール (タイムライン風) */
+.timeline {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 30px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    border: 3px solid var(--primary-color);
+}
+.timeline-date {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+.important-note {
+    color: #C0392B;
+    font-weight: bold;
+    background-color: #FDEDEC;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* --- フッター --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 14px;
+    color: #666;
+}
+
+/* --- 印刷用スタイル --- */
+@media print {
+    body {
+        background-color: var(--white-color);
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+        padding: 0;
+    }
+    .alert, .lead {
+        border-width: 1px;
+    }
+    .timeline {
+        border-left-color: #000;
+    }
+    .timeline-item:before {
+        border-color: #000;
+    }
+    h1, h2, h3, h2 i, .timeline-date, .important-note {
+        color: #000 !important;
+    }
+    header {
+        border-bottom-color: #000;
+    }
+}
